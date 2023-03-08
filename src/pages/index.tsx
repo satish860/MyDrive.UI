@@ -1,3 +1,4 @@
+import DashBoard from "@/components/dashboard";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { Center, Stack, Text } from "@chakra-ui/react";
 
@@ -5,12 +6,7 @@ export default function Home() {
   const { user, error, isLoading } = useUser();
 
   return user ? (
-    <div>
-      <img src={user.picture!} alt={user.name!} />
-      <h2>{user.name}</h2>
-      <p>{user.email}</p>
-      <a href="/api/auth/logout">Logout</a>
-    </div>
+    <DashBoard></DashBoard>
   ) : (
     <Center height="100vh">
       <Stack spacing={4} align="center">
