@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
+import SideMenu from "./SideMenu/SideMenu";
 
 interface IDashboardProps {}
 
@@ -19,7 +20,7 @@ const DashBoard: React.FunctionComponent<IDashboardProps> = (props) => {
         My Menu Goes Here
       </GridItem>
       <GridItem pl="2"  bg = "whiteAlpha.50" area={"nav"}>
-        Nav
+        <SideMenu/>
       </GridItem>
       <GridItem pl="2" bg="green.300" area={"main"}>
         Main
