@@ -17,21 +17,8 @@ const SideMenu: React.FunctionComponent<ISideMenuProps> = (props) => {
   const handleFileUpload = (event: any) => {
     debugger;
     const selectedFile = event.target.files && event.target.files[0];
-    const fileReader = new FileReader();
-    fileReader.onload = () => {
-      const fileMetadata = {
-        name: selectedFile.name,
-        size: selectedFile.size,
-        type: selectedFile.type,
-        data: fileReader.result,
-      };
-      console.log("File metadata: ", fileMetadata);
-      // Make an API call to upload the file using the metadata
-    };
-
     if (selectedFile) {
       setFile(selectedFile);
-      fileReader.readAsDataURL(selectedFile);
     } else {
       console.log("No file Found");
     }
